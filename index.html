@@ -154,8 +154,8 @@
   .check-item{display:flex;gap:12px;align-items:center;font-size:15.5px;color:var(--ink);line-height:1.5;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 18px;box-shadow:var(--shadow);transition:.2s}
   .check-item:hover{border-color:var(--blue-400)}
   .check-item .ck{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--ice-100);color:var(--blue-600);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-top:1px}
-  .make-block{margin-top:36px;max-width:760px}
-  .make-title{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:8px}
+  .make-block{margin-top:48px;max-width:760px}
+  .make-title{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
   .make-sub{font-size:13px;color:var(--muted,#8a94a3);margin:0 0 18px;line-height:1.6}
   .make-grid{display:grid;grid-template-columns:1fr;gap:12px}
   .make-card{background:var(--ice-50);border:1px solid var(--border);border-radius:var(--radius-lg,14px);padding:16px 18px;display:flex;flex-direction:column;gap:6px}
@@ -320,6 +320,25 @@
   .contact{background:var(--navy-950);color:#fff}
   .contact .sec-head p{color:rgba(255,255,255,.68)}
   .form{max-width:620px;margin:0 auto;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-lg);padding:36px;backdrop-filter:blur(10px)}
+  .contact-channels{max-width:620px;margin:0 auto 20px;display:flex;flex-direction:column;gap:14px}
+  .channel-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-lg);padding:20px 22px;transition:.2s}
+  .channel-box:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.26)}
+  .channel-box.kakao{display:flex;align-items:center;gap:16px;text-decoration:none;color:#fff;cursor:pointer}
+  .channel-box-icon{flex:0 0 auto;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);color:#fff}
+  .channel-box.kakao .channel-box-icon{background:#FEE500;color:#391B1B}
+  .channel-box-text{flex:1;display:flex;flex-direction:column;gap:3px;text-align:left}
+  .channel-box-text strong{font-size:15.5px;color:#fff;font-weight:800}
+  .channel-box-text span{font-size:13px;color:rgba(255,255,255,.6);line-height:1.5}
+  .channel-box-arrow{font-size:18px;color:rgba(255,255,255,.5);flex:0 0 auto}
+  .channel-box-trigger{all:unset;display:flex;align-items:center;gap:16px;width:100%;box-sizing:border-box;cursor:pointer}
+  .channel-box-chevron{font-size:13px;color:rgba(255,255,255,.5);transition:.25s;flex:0 0 auto}
+  .mail-acc.open .channel-box-chevron{transform:rotate(180deg)}
+  .channel-box-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+  .mail-acc.open .channel-box-panel{grid-template-rows:1fr}
+  .channel-box-panel-inner{overflow:hidden;min-height:0}
+  .mail-acc-body{padding-top:18px}
+  .mail-acc-intro{font-size:13px;color:rgba(255,255,255,.62);line-height:1.6;margin:0 0 14px}
+  .mail-acc .form{max-width:none;margin:0;background:none;border:0;padding:0;backdrop-filter:none}
   .form label{display:block;font-size:13px;color:rgba(255,255,255,.62);font-weight:700;margin:16px 0 7px}
   .form input,.form select,.form textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:14px;color:#fff;font-size:15px;font-family:var(--sans)}
   .form input::placeholder,.form textarea::placeholder{color:rgba(255,255,255,.35)}
@@ -342,8 +361,8 @@
     .float-contact-btn{right:16px;bottom:16px;padding:13px 18px;font-size:13.5px}
   }
   @media(min-width:901px){
-    body.subpage-open .float-contact-btn{display:inline-flex;right:28px;bottom:auto;top:50%;transform:translateY(-50%)}
-    body.subpage-open .float-contact-btn:hover{background:var(--copper-700);transform:translateY(-50%) translateX(-4px)}
+    body.subpage-open .float-contact-btn{display:block;right:0;bottom:auto;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;text-orientation:mixed;padding:26px 13px;border-radius:16px 0 0 16px;background:linear-gradient(160deg,var(--blue-500),var(--navy-800));box-shadow:0 10px 30px rgba(15,46,82,.4);letter-spacing:.04em}
+    body.subpage-open .float-contact-btn:hover{background:linear-gradient(160deg,var(--blue-400),var(--navy-900));transform:translateY(-50%) translateX(-5px)}
   }
   .modal-card.wide{max-width:480px}
   .modal-card .form{max-width:none;background:none;border:0;padding:0;backdrop-filter:none}
@@ -400,14 +419,14 @@
     .nav-links{gap:6px}
     .nav-tab{font-size:17.5px;padding:11px 16px}
     .nav-cta{font-size:17.5px;padding:12px 22px;margin-left:10px}
-    .sec-head h2{font-size:51px}
-    .sec-head p{font-size:19.5px}
-    .check-list{max-width:660px;gap:20px}
-    .check-item .ck{width:30px;height:30px;font-size:15px}
-    .make-title{font-size:18px}
+    .sec-head h2{font-size:54px}
+    .sec-head p{font-size:21.5px}
+    .check-list{max-width:700px;gap:24px}
+    .check-item .ck{width:33px;height:33px;font-size:16.5px}
+    .make-title{font-size:26px;margin-bottom:12px}
     .make-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .make-card-title{font-size:16.5px}
-    .make-card-desc{font-size:14.5px}
+    .make-card-title{font-size:18.5px}
+    .make-card-desc{font-size:16px}
     .timeline-v{max-width:860px}
     .tlv-step{gap:32px;margin-bottom:66px}
     .tlv-dot{width:92px;height:92px}
@@ -416,26 +435,31 @@
     .tlv-card .step-tag{font-size:15.5px}
     .tlv-card h3{font-size:24px;margin-bottom:11px}
     .tlv-card p{font-size:17.5px;line-height:1.6}
-    .about-body p{font-size:17.5px}
-    .check-item{font-size:17.5px}
-    .stat .num{font-size:40px}
-    .stat .lbl{font-size:15.5px}
-    .price-tagline{font-size:19.5px}
-    .price-desc{font-size:17px}
-    .spec-list li{font-size:16.5px}
-    .comp-table{font-size:16px}
-    .comp-card .cc-name{font-size:17px}
-    .comp-card .cc-price{font-size:15.5px}
-    .prep-list .pt{font-size:16.5px}
-    .prep-list .pd{font-size:15px}
+    .about-body p{font-size:19.5px}
+    .check-item{font-size:19.5px}
+    .stat .num{font-size:44px}
+    .stat .lbl{font-size:17px}
+    .price-tagline{font-size:21.5px}
+    .price-desc{font-size:19px}
+    .spec-list li{font-size:18.5px}
+    .comp-table{font-size:18px}
+    .comp-cards{gap:20px;max-width:960px}
+    .comp-card{padding:26px 24px}
+    .comp-card .cc-id{font-size:11.5px}
+    .comp-card .cc-tag{font-size:13.5px}
+    .comp-card .cc-more{font-size:13.5px}
+    .comp-card .cc-name{font-size:19px}
+    .comp-card .cc-price{font-size:17.5px}
+    .prep-list .pt{font-size:18.5px}
+    .prep-list .pd{font-size:16.5px}
     .filter{font-size:16px;padding:12px 24px}
     .reel .cap h3{font-size:17px}
     .reel .cap .cat{font-size:13.5px}
-    .faq-q{font-size:18px}
-    .faq-a p{font-size:16.5px}
-    .callout p{font-size:16px}
-    .sub-block h3{font-size:24px}
-    .opt-box p{font-size:15.5px}
+    .faq-q{font-size:20px}
+    .faq-a p{font-size:18.5px}
+    .callout p{font-size:18px}
+    .sub-block h3{font-size:27px}
+    .opt-box p{font-size:17.5px}
   }
 
   @media(min-width:1300px){
@@ -937,33 +961,54 @@
   <div class="wrap">
     <div class="sec-head center">
       <h2>숏폼 제작, 문의하기</h2>
-      <p>간단히 남겨주시면 빠르게 연락드리겠습니다.</p>
+      <p>편하신 방법으로 남겨주세요. 빠르게 확인하고 답변드릴게요.</p>
     </div>
-    <form class="form" id="contactForm">
-      <input type="hidden" name="_subject" value="S STUDIO 홈페이지 문의">
-      <div class="row">
-        <div><label for="f-name">이름 / 브랜드</label><input id="f-name" name="name" type="text" placeholder="예) 홍길동 / OO카페" required></div>
-        <div><label for="f-contact">연락처</label><input id="f-contact" name="contact" type="text" placeholder="이메일 또는 전화번호" required></div>
-      </div>
-      <label for="f-type">원하는 영상</label>
-      <select id="f-type" name="type">
-        <option>STANDARD</option>
-        <option>DELUXE</option>
-        <option>PREMIUM</option>
-        <option>편집만</option>
-        <option>월 패키지</option>
-        <option>기타상담</option>
-      </select>
-      <label for="f-msg">내용</label>
-      <textarea id="f-msg" name="message" rows="4" placeholder="만들고 싶은 영상이나 궁금한 점을 편하게 적어주세요."></textarea>
-      <button class="btn btn-primary" type="submit">문의 보내기</button>
-    </form>
-    <div id="contactResult" class="contact-result" style="display:none">
-      <p id="contactResultLabel" class="cr-label">메일 앱이 자동으로 안 열리면, 아래 내용을 복사해서 이메일이나 카카오톡 채널로 보내주세요.</p>
-      <pre id="contactResultText" class="cr-text"></pre>
-      <div class="cr-actions">
-        <button type="button" class="btn btn-primary" id="copyBtn">내용 복사하기</button>
-        <a id="mailFallback" class="btn" href="#" target="_blank" rel="noopener">메일 앱으로 열기</a>
+    <div class="contact-channels">
+      <a class="channel-box kakao" href="http://pf.kakao.com/_HJXaX" target="_blank" rel="noopener">
+        <span class="channel-box-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.73 1.78 5.14 4.47 6.57-.2.73-.72 2.65-.83 3.06-.13.5.18.5.39.36.16-.11 2.6-1.77 3.66-2.49.75.11 1.52.17 2.31.17 5.52 0 10-3.58 10-8 0-4.42-4.48-8-10-8z"/></svg></span>
+        <span class="channel-box-text"><strong>카카오톡으로 문의하기</strong><span>가장 빠르게 확인하고 답변드려요</span></span>
+        <span class="channel-box-arrow">→</span>
+      </a>
+      <div class="channel-box mail-acc" id="mailAccBox">
+        <button type="button" class="channel-box-trigger" id="mailAccTrigger" aria-expanded="false" aria-controls="mailAccPanel">
+          <span class="channel-box-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg></span>
+          <span class="channel-box-text"><strong>이메일로 문의하기</strong><span>필요한 내용을 정리해서 남겨주시면 꼼꼼히 답변드려요</span></span>
+          <span class="channel-box-chevron">⌄</span>
+        </button>
+        <div class="channel-box-panel" id="mailAccPanel">
+          <div class="channel-box-panel-inner">
+            <div class="mail-acc-body">
+              <p class="mail-acc-intro">아래 내용을 남겨주시면 꼼꼼히 확인하고 보통 1~2일 내로 입력하신 연락처로 답변드려요. 급하신 경우 위 카카오톡을 이용해주세요.</p>
+              <form class="form" id="contactForm">
+                <input type="hidden" name="_subject" value="S STUDIO 홈페이지 문의">
+                <div class="row">
+                  <div><label for="f-name">이름 / 브랜드</label><input id="f-name" name="name" type="text" placeholder="예) 홍길동 / OO카페" required></div>
+                  <div><label for="f-contact">연락처</label><input id="f-contact" name="contact" type="text" placeholder="이메일 또는 전화번호" required></div>
+                </div>
+                <label for="f-type">원하는 영상</label>
+                <select id="f-type" name="type">
+                  <option>STANDARD</option>
+                  <option>DELUXE</option>
+                  <option>PREMIUM</option>
+                  <option>편집만</option>
+                  <option>월 패키지</option>
+                  <option>기타상담</option>
+                </select>
+                <label for="f-msg">내용</label>
+                <textarea id="f-msg" name="message" rows="4" placeholder="만들고 싶은 영상이나 궁금한 점을 편하게 적어주세요."></textarea>
+                <button class="btn btn-primary" type="submit">문의 보내기</button>
+              </form>
+              <div id="contactResult" class="contact-result" style="display:none">
+                <p id="contactResultLabel" class="cr-label">메일 앱이 자동으로 안 열리면, 아래 내용을 복사해서 이메일이나 카카오톡 채널로 보내주세요.</p>
+                <pre id="contactResultText" class="cr-text"></pre>
+                <div class="cr-actions">
+                  <button type="button" class="btn btn-primary" id="copyBtn">내용 복사하기</button>
+                  <a id="mailFallback" class="btn" href="#" target="_blank" rel="noopener">메일 앱으로 열기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1116,6 +1161,17 @@
         document.body.removeChild(ta);
       }
       setTimeout(reset,2200);
+    });
+  }
+
+  // 이메일 문의 아코디언
+  const mailAccTrigger=document.getElementById('mailAccTrigger');
+  const mailAccBox=document.getElementById('mailAccBox');
+  if(mailAccTrigger && mailAccBox){
+    mailAccTrigger.addEventListener('click',()=>{
+      const willOpen=!mailAccBox.classList.contains('open');
+      mailAccBox.classList.toggle('open',willOpen);
+      mailAccTrigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
     });
   }
 

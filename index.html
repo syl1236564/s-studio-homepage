@@ -30,7 +30,7 @@
 
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
   a{text-decoration:none;color:inherit}
   button{font-family:inherit}
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
@@ -170,8 +170,7 @@
   .comp-table th,.comp-table td{padding:14px 14px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap}
   .comp-table th{font-weight:800;color:var(--ink);background:var(--ice-50)}
   .comp-table td:first-child,.comp-table th:first-child{color:var(--sub);font-weight:700;white-space:nowrap}
-  .comp-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px;max-width:900px}
-  @media(max-width:760px){.comp-cards{grid-template-columns:1fr 1fr}}
+  .comp-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px;max-width:900px}
   @media(max-width:480px){.comp-cards{grid-template-columns:1fr}}
   .comp-card{display:block;position:relative;overflow:hidden;background:#fff;border:1px solid var(--border);border-radius:10px;padding:22px 20px;transition:.2s}
   .comp-card:hover{border-color:var(--sc,var(--blue-500));box-shadow:var(--shadow)}
@@ -342,6 +341,10 @@
     body.subpage-open .float-contact-btn{display:inline-flex}
     .float-contact-btn{right:16px;bottom:16px;padding:13px 18px;font-size:13.5px}
   }
+  @media(min-width:901px){
+    body.subpage-open .float-contact-btn{display:inline-flex;right:28px;bottom:auto;top:50%;transform:translateY(-50%)}
+    body.subpage-open .float-contact-btn:hover{background:var(--copper-700);transform:translateY(-50%) translateX(-4px)}
+  }
   .modal-card.wide{max-width:480px}
   .modal-card .form{max-width:none;background:none;border:0;padding:0;backdrop-filter:none}
   .modal-card .form label{color:var(--sub)}
@@ -397,42 +400,42 @@
     .nav-links{gap:6px}
     .nav-tab{font-size:17.5px;padding:11px 16px}
     .nav-cta{font-size:17.5px;padding:12px 22px;margin-left:10px}
-    .sec-head h2{font-size:48px}
-    .sec-head p{font-size:18.5px}
-    .check-list{max-width:640px;gap:18px}
-    .check-item .ck{width:28px;height:28px;font-size:14px}
-    .make-title{font-size:17px}
+    .sec-head h2{font-size:51px}
+    .sec-head p{font-size:19.5px}
+    .check-list{max-width:660px;gap:20px}
+    .check-item .ck{width:30px;height:30px;font-size:15px}
+    .make-title{font-size:18px}
     .make-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .make-card-title{font-size:15.5px}
-    .make-card-desc{font-size:13.5px}
-    .timeline-v{max-width:820px}
-    .tlv-step{gap:30px;margin-bottom:62px}
-    .tlv-dot{width:86px;height:86px}
-    .tlv-dot svg{width:34px;height:34px}
-    .tlv-card{padding:30px 34px;border-radius:20px}
-    .tlv-card .step-tag{font-size:14.5px}
-    .tlv-card h3{font-size:22px;margin-bottom:10px}
-    .tlv-card p{font-size:16.5px;line-height:1.6}
-    .about-body p{font-size:16.5px}
-    .check-item{font-size:16.5px}
-    .stat .num{font-size:36px}
-    .stat .lbl{font-size:14.5px}
-    .price-tagline{font-size:18.5px}
-    .price-desc{font-size:16px}
-    .spec-list li{font-size:15.5px}
-    .comp-table{font-size:15px}
-    .comp-card .cc-name{font-size:16px}
-    .comp-card .cc-price{font-size:14.5px}
-    .prep-list .pt{font-size:15.5px}
-    .prep-list .pd{font-size:14px}
-    .filter{font-size:15px;padding:11px 22px}
-    .reel .cap h3{font-size:16px}
-    .reel .cap .cat{font-size:12.5px}
-    .faq-q{font-size:17px}
-    .faq-a p{font-size:15.5px}
-    .callout p{font-size:15px}
-    .sub-block h3{font-size:22px}
-    .opt-box p{font-size:14.5px}
+    .make-card-title{font-size:16.5px}
+    .make-card-desc{font-size:14.5px}
+    .timeline-v{max-width:860px}
+    .tlv-step{gap:32px;margin-bottom:66px}
+    .tlv-dot{width:92px;height:92px}
+    .tlv-dot svg{width:36px;height:36px}
+    .tlv-card{padding:32px 38px;border-radius:22px}
+    .tlv-card .step-tag{font-size:15.5px}
+    .tlv-card h3{font-size:24px;margin-bottom:11px}
+    .tlv-card p{font-size:17.5px;line-height:1.6}
+    .about-body p{font-size:17.5px}
+    .check-item{font-size:17.5px}
+    .stat .num{font-size:40px}
+    .stat .lbl{font-size:15.5px}
+    .price-tagline{font-size:19.5px}
+    .price-desc{font-size:17px}
+    .spec-list li{font-size:16.5px}
+    .comp-table{font-size:16px}
+    .comp-card .cc-name{font-size:17px}
+    .comp-card .cc-price{font-size:15.5px}
+    .prep-list .pt{font-size:16.5px}
+    .prep-list .pd{font-size:15px}
+    .filter{font-size:16px;padding:12px 24px}
+    .reel .cap h3{font-size:17px}
+    .reel .cap .cat{font-size:13.5px}
+    .faq-q{font-size:18px}
+    .faq-a p{font-size:16.5px}
+    .callout p{font-size:16px}
+    .sub-block h3{font-size:24px}
+    .opt-box p{font-size:15.5px}
   }
 
   @media(min-width:1300px){
@@ -612,10 +615,10 @@
       </table>
     </div>
     <div class="comp-cards">
-      <a class="comp-card" href="#comp-standard" style="--sc:var(--blue-500)"><span class="cc-corner tl"></span><span class="cc-corner br"></span><div class="cc-head"><span class="cc-id">TIER // 01</span><span class="cc-dot"></span></div><div class="cc-name">STANDARD</div><div class="cc-price">150,000원</div><div class="cc-tag">▸ 스타일 직접 지정</div><div class="cc-more">자세히 보기 →</div></a>
-      <a class="comp-card" href="#comp-deluxe" style="--sc:var(--copper-600)"><span class="cc-corner tl"></span><span class="cc-corner br"></span><div class="cc-head"><span class="cc-id">TIER // 02</span><span class="cc-dot"></span></div><div class="cc-name">DELUXE</div><div class="cc-price">500,000원</div><div class="cc-tag">▸ 2~3안 제안 후 선택</div><div class="cc-more">자세히 보기 →</div></a>
-      <a class="comp-card" href="#comp-premium" style="--sc:var(--navy-900)"><span class="cc-corner tl"></span><span class="cc-corner br"></span><div class="cc-head"><span class="cc-id">TIER // 03</span><span class="cc-dot"></span></div><div class="cc-name">PREMIUM</div><div class="cc-price">750,000원~</div><div class="cc-tag">▸ 브랜드 전용 신규 제작</div><div class="cc-more">자세히 보기 →</div></a>
-      <a class="comp-card" href="#comp-extra" style="--sc:var(--blue-400)"><span class="cc-corner tl"></span><span class="cc-corner br"></span><div class="cc-head"><span class="cc-id">EXTRA // 04</span><span class="cc-dot"></span></div><div class="cc-name">번외</div><div class="cc-price">편집만·월 패키지</div><div class="cc-more">자세히 보기 →</div></a>
+      <a class="comp-card" href="#comp-standard" style="--sc:var(--blue-500)"><span class="cc-corner tl"></span><span class="cc-corner br"></span><div class="cc-head"><span class="cc-id">TIER // 01</span><span class="cc-dot"></span></div><div class="cc-name">STANDARD</div><div class="cc-price">150,000원</div><div class="cc-tag">▸ 원하는 스타일로 빠르고 가볍게</div><div class="cc-more">자세히 보기 →</div></a>
+      <a class="comp-card" href="#comp-deluxe" style="--sc:var(--copper-600)"><span class="cc-corner tl"></span><span class="cc-corner br"></span><div class="cc-head"><span class="cc-id">TIER // 02</span><span class="cc-dot"></span></div><div class="cc-name">DELUXE</div><div class="cc-price">500,000원</div><div class="cc-tag">▸ 시안 제안부터 대본까지 함께 기획</div><div class="cc-more">자세히 보기 →</div></a>
+      <a class="comp-card" href="#comp-premium" style="--sc:var(--copper-600)"><span class="cc-corner tl"></span><span class="cc-corner br"></span><div class="cc-head"><span class="cc-id">TIER // 03</span><span class="cc-dot"></span></div><div class="cc-name">PREMIUM</div><div class="cc-price">750,000원~</div><div class="cc-tag">▸ 브랜드 전용 신규 제작</div><div class="cc-more">자세히 보기 →</div></a>
+      <a class="comp-card" href="#comp-extra" style="--sc:var(--blue-500)"><span class="cc-corner tl"></span><span class="cc-corner br"></span><div class="cc-head"><span class="cc-id">EXTRA // 04</span><span class="cc-dot"></span></div><div class="cc-name">번외</div><div class="cc-price">편집만·월 패키지</div><div class="cc-more">자세히 보기 →</div></a>
       <a class="comp-card" href="#comp-notice" style="--sc:var(--muted)"><span class="cc-corner tl"></span><span class="cc-corner br"></span><div class="cc-head"><span class="cc-id">INFO // 05</span><span class="cc-dot"></span></div><div class="cc-name">안내사항</div><div class="cc-price">주문 전 확인사항</div><div class="cc-more">자세히 보기 →</div></a>
     </div>
   </div>
@@ -966,21 +969,21 @@
   </div>
 </section>
 
-<button type="button" id="floatContactBtn" class="float-contact-btn">문의하기</button>
+<button type="button" id="floatContactBtn" class="float-contact-btn">상담 신청</button>
 
 <div class="modal-bg" id="quickContactModal">
   <div class="modal-card wide">
     <button class="x" id="quickModalClose" aria-label="닫기">✕</button>
-    <h3>빠른 문의</h3>
+    <h3>빠른 상담 신청</h3>
     <form class="form" id="quickContactForm">
-      <input type="hidden" name="_subject" value="S STUDIO 빠른문의(플로팅버튼)">
+      <input type="hidden" name="_subject" value="S STUDIO 빠른상담신청(플로팅버튼)">
       <label for="q-name">이름 / 브랜드</label>
       <input id="q-name" name="name" type="text" placeholder="예) 홍길동 / OO카페" required>
       <label for="q-contact">연락처</label>
       <input id="q-contact" name="contact" type="text" placeholder="이메일 또는 전화번호" required>
       <label for="q-msg">내용</label>
       <textarea id="q-msg" name="message" rows="3" placeholder="만들고 싶은 영상이나 궁금한 점을 편하게 적어주세요."></textarea>
-      <button class="btn btn-primary" type="submit">문의 보내기</button>
+      <button class="btn btn-primary" type="submit">상담 신청하기</button>
     </form>
     <div id="quickContactResult" class="contact-result" style="display:none">
       <p id="quickContactResultLabel" class="cr-label">메일 앱이 자동으로 안 열리면, 아래 내용을 복사해서 이메일이나 카카오톡 채널로 보내주세요.</p>

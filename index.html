@@ -346,6 +346,18 @@
   .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media(max-width:540px){.form .row{grid-template-columns:1fr}}
   .form .btn{width:100%;justify-content:center;margin-top:24px}
+  .form .hint{font-size:12px;color:rgba(255,255,255,.42);margin-top:4px}
+  .chip-group{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{position:relative;cursor:pointer}
+  .chip input{position:absolute;opacity:0;width:1px;height:1px}
+  .chip span{display:inline-block;padding:9px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.18);font-size:13px;color:rgba(255,255,255,.72);transition:.15s;user-select:none}
+  .chip input:checked+span{background:linear-gradient(135deg,var(--copper-400),var(--copper-700));border-color:var(--copper-600);color:#fff;font-weight:700}
+  .chip input:focus-visible+span{outline:2px solid var(--blue-400);outline-offset:2px}
+  .consent-row{display:flex;align-items:flex-start;gap:10px;margin-top:18px}
+  .consent-row:first-of-type{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1)}
+  .consent-row input{width:auto;flex:0 0 auto;margin-top:3px;accent-color:var(--copper-600)}
+  .consent-row label{margin:0;font-size:12.5px;color:rgba(255,255,255,.65);font-weight:500;line-height:1.5}
+  .consent-note{font-size:11.5px;color:rgba(255,255,255,.4);margin:4px 0 0 26px;line-height:1.5}
   .contact-result{max-width:620px;margin:18px auto 0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius-lg);padding:24px}
   .contact-result .cr-label{font-size:13.5px;color:rgba(255,255,255,.7);margin-bottom:12px;line-height:1.5}
   .contact-result .cr-text{white-space:pre-wrap;word-break:break-word;font-family:var(--sans);background:rgba(0,0,0,.2);border-radius:var(--radius);padding:14px;font-size:13.5px;color:#fff;line-height:1.6;margin-bottom:14px}
@@ -984,7 +996,45 @@
                   <div><label for="f-name">이름 / 브랜드</label><input id="f-name" name="name" type="text" placeholder="예) 홍길동 / OO카페" required></div>
                   <div><label for="f-contact">연락처</label><input id="f-contact" name="contact" type="text" placeholder="이메일 또는 전화번호" required></div>
                 </div>
-                <label for="f-type">원하는 영상</label>
+                <label for="f-industry">업종</label>
+                <select id="f-industry" name="industry">
+                  <option value="">선택 안 함</option>
+                  <option>카페·디저트</option>
+                  <option>음식점</option>
+                  <option>뷰티·미용</option>
+                  <option>헬스·필라테스</option>
+                  <option>병원·의원</option>
+                  <option>쇼핑몰·제품</option>
+                  <option>학원·교육</option>
+                  <option>부동산</option>
+                  <option>숙박·여행</option>
+                  <option>기타</option>
+                </select>
+                <label>주요 고객층 <span class="hint">(해당되는 것 모두 선택, 선택)</span></label>
+                <div class="chip-group">
+                  <label class="chip"><input type="checkbox" name="age_group" value="10대"><span>10대</span></label>
+                  <label class="chip"><input type="checkbox" name="age_group" value="20대"><span>20대</span></label>
+                  <label class="chip"><input type="checkbox" name="age_group" value="30대"><span>30대</span></label>
+                  <label class="chip"><input type="checkbox" name="age_group" value="40대"><span>40대</span></label>
+                  <label class="chip"><input type="checkbox" name="age_group" value="50대 이상"><span>50대 이상</span></label>
+                  <label class="chip"><input type="checkbox" name="age_group" value="직장인"><span>직장인</span></label>
+                  <label class="chip"><input type="checkbox" name="age_group" value="학부모"><span>학부모</span></label>
+                </div>
+                <label for="f-sns">매장·브랜드 SNS 주소 <span class="hint">(선택)</span></label>
+                <input id="f-sns" name="sns" type="text" placeholder="인스타그램, 블로그 등 링크">
+                <label>원하시는 영상 스타일 <span class="hint">(해당되는 것 모두 선택, 선택)</span></label>
+                <div class="chip-group">
+                  <label class="chip"><input type="checkbox" name="style" value="브랜드 필름"><span>브랜드 필름</span></label>
+                  <label class="chip"><input type="checkbox" name="style" value="캐릭터 광고"><span>캐릭터 광고</span></label>
+                  <label class="chip"><input type="checkbox" name="style" value="신제품·신메뉴 소개"><span>신제품·신메뉴 소개</span></label>
+                  <label class="chip"><input type="checkbox" name="style" value="실사 제품·매장 영상"><span>실사 제품·매장 영상</span></label>
+                  <label class="chip"><input type="checkbox" name="style" value="비포·애프터 영상"><span>비포·애프터 영상</span></label>
+                  <label class="chip"><input type="checkbox" name="style" value="고객 후기 영상"><span>고객 후기 영상</span></label>
+                  <label class="chip"><input type="checkbox" name="style" value="숏드라마·스토리 영상"><span>숏드라마·스토리 영상</span></label>
+                  <label class="chip"><input type="checkbox" name="style" value="이벤트·프로모션 영상"><span>이벤트·프로모션 영상</span></label>
+                  <label class="chip"><input type="checkbox" name="style" value="시즌 인사 영상"><span>시즌 인사 영상</span></label>
+                </div>
+                <label for="f-type">원하는 등급</label>
                 <select id="f-type" name="type">
                   <option>STANDARD</option>
                   <option>DELUXE</option>
@@ -993,8 +1043,29 @@
                   <option>월 패키지</option>
                   <option>기타상담</option>
                 </select>
+                <label for="f-ref">참고하고 싶은 영상 링크 <span class="hint">(선택)</span></label>
+                <input id="f-ref" name="ref_video" type="text" placeholder="유튜브, 인스타그램 등 참고 영상 링크">
                 <label for="f-msg">내용</label>
                 <textarea id="f-msg" name="message" rows="4" placeholder="만들고 싶은 영상이나 궁금한 점을 편하게 적어주세요."></textarea>
+                <label for="f-referral">어떻게 알게 되셨나요? <span class="hint">(선택)</span></label>
+                <select id="f-referral" name="referral">
+                  <option value="">선택 안 함</option>
+                  <option>인스타그램</option>
+                  <option>유튜브</option>
+                  <option>크몽</option>
+                  <option>지인 소개</option>
+                  <option>검색</option>
+                  <option>기타</option>
+                </select>
+                <div class="consent-row">
+                  <input type="checkbox" id="f-portfolio-consent" name="portfolio_consent" value="동의">
+                  <label for="f-portfolio-consent">완성된 영상을 S STUDIO 포트폴리오·SNS 홍보용으로 사용하는 것에 동의해요 (선택, 비공개를 원하시면 체크하지 않아도 돼요)</label>
+                </div>
+                <div class="consent-row">
+                  <input type="checkbox" id="f-privacy-consent" name="privacy_consent" value="동의" required>
+                  <label for="f-privacy-consent">[필수] 개인정보 수집·이용에 동의합니다</label>
+                </div>
+                <p class="consent-note">수집 항목: 이름/브랜드명, 연락처, 이메일(선택) · 수집 목적: 문의 상담 및 제작 안내 · 보유 기간: 문의 응대 완료 후 지체 없이 파기</p>
                 <button class="btn btn-primary" type="submit">문의 보내기</button>
               </form>
               <div id="contactResult" class="contact-result" style="display:none">
@@ -1069,11 +1140,19 @@
     contactForm.addEventListener('submit',async function(e){
       e.preventDefault();
       const submitBtn=contactForm.querySelector('button[type="submit"]');
-      const name=document.getElementById('f-name').value;
-      const contact=document.getElementById('f-contact').value;
-      const type=document.getElementById('f-type').value;
-      const msg=document.getElementById('f-msg').value;
-      const plainText='이름/브랜드: '+name+'\n연락처: '+contact+'\n원하는 영상: '+type+'\n\n내용:\n'+msg;
+      const fd0=new FormData(contactForm);
+      const name=fd0.get('name')||'';
+      const contact=fd0.get('contact')||'';
+      const type=fd0.get('type')||'';
+      const msg=fd0.get('message')||'';
+      const industry=fd0.get('industry')||'미입력';
+      const ageGroups=fd0.getAll('age_group').join(', ')||'미입력';
+      const sns=fd0.get('sns')||'미입력';
+      const styles=fd0.getAll('style').join(', ')||'미입력';
+      const refVideo=fd0.get('ref_video')||'미입력';
+      const referral=fd0.get('referral')||'미입력';
+      const portfolioConsent=fd0.get('portfolio_consent')?'동의':'비동의(비공개 희망)';
+      const plainText='이름/브랜드: '+name+'\n연락처: '+contact+'\n업종: '+industry+'\n주요 고객층: '+ageGroups+'\nSNS 주소: '+sns+'\n원하는 영상 스타일: '+styles+'\n원하는 등급: '+type+'\n참고 영상: '+refVideo+'\n어떻게 알게 되셨나요: '+referral+'\n포트폴리오 활용 동의: '+portfolioConsent+'\n\n내용:\n'+msg;
       const subject=encodeURIComponent('[S STUDIO 문의] '+name+' / '+type);
       const body=encodeURIComponent(plainText);
       const mailUrl='mailto:s_tudio_ai@naver.com?subject='+subject+'&body='+body;

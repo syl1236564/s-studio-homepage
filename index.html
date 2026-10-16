@@ -693,7 +693,6 @@
         <li>로고 파일 (PNG, 배경 투명 권장)</li>
         <li>브랜드 컬러 또는 기존 상세페이지</li>
         <li>참고하고 싶은 영상 링크 1~2개</li>
-        <li>꼭 들어갔으면 하는 문구나 자막</li>
         <li>피하고 싶은 표현이나 연출</li>
       </ul>
     </div>
@@ -1096,6 +1095,8 @@
                 </select>
                 <label for="f-ref">참고하고 싶은 영상 링크 <span class="hint">(선택)</span></label>
                 <input id="f-ref" name="ref_video" type="text" placeholder="유튜브, 인스타그램 등 참고 영상 링크">
+                <label for="f-phrase">영상에 꼭 들어갔으면 하는 문구나 자막 <span class="hint">(선택)</span></label>
+                <input id="f-phrase" name="must_phrase" type="text" placeholder="예) 매장 이름, 슬로건 등 꼭 들어갔으면 하는 문구">
                 <label for="f-msg">내용</label>
                 <textarea id="f-msg" name="message" rows="4" placeholder="만들고 싶은 영상이나 궁금한 점을 편하게 적어주세요."></textarea>
                 <label for="f-referral">어떻게 알게 되셨나요? <span class="hint">(선택)</span></label>
@@ -1201,9 +1202,10 @@
       const sns=fd0.get('sns')||'미입력';
       const styles=fd0.getAll('style').join(', ')||'미입력';
       const refVideo=fd0.get('ref_video')||'미입력';
+      const mustPhrase=fd0.get('must_phrase')||'미입력';
       const referral=fd0.get('referral')||'미입력';
       const portfolioConsent=fd0.get('portfolio_consent')?'동의':'비동의(비공개 희망)';
-      const plainText='이름/브랜드: '+name+'\n연락처: '+contact+'\n업종: '+industry+'\n주요 고객층: '+ageGroups+'\nSNS 주소: '+sns+'\n원하는 영상 스타일: '+styles+'\n원하는 등급: '+type+'\n참고 영상: '+refVideo+'\n어떻게 알게 되셨나요: '+referral+'\n포트폴리오 활용 동의: '+portfolioConsent+'\n\n내용:\n'+msg;
+      const plainText='이름/브랜드: '+name+'\n연락처: '+contact+'\n업종: '+industry+'\n주요 고객층: '+ageGroups+'\nSNS 주소: '+sns+'\n원하는 영상 스타일: '+styles+'\n원하는 등급: '+type+'\n참고 영상: '+refVideo+'\n꼭 들어갔으면 하는 문구: '+mustPhrase+'\n어떻게 알게 되셨나요: '+referral+'\n포트폴리오 활용 동의: '+portfolioConsent+'\n\n내용:\n'+msg;
       const subject=encodeURIComponent('[S STUDIO 문의] '+name+' / '+type);
       const body=encodeURIComponent(plainText);
       const mailUrl='mailto:s_tudio_ai@naver.com?subject='+subject+'&body='+body;
